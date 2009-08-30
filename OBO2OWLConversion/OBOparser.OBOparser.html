@@ -1,0 +1,258 @@
+
+<!doctype html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module OBOparser.OBOparser</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="OBOparser.html"><font color="#ffffff">OBOparser</font></a>.OBOparser</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/ed/Documents/OpenSource/OBOParserEoc21/src/OBOparser/OBOparser.py">/home/ed/Documents/OpenSource/OBOParserEoc21/src/OBOparser/OBOparser.py</a></font></td></tr></table>
+    <p><tt>Created&nbsp;on&nbsp;Aug&nbsp;15,&nbsp;2009<br>
+Class&nbsp;to&nbsp;process&nbsp;and&nbsp;OBO&nbsp;file&nbsp;from&nbsp;the&nbsp;World&nbsp;Wide&nbsp;Web.<br>
+@author:&nbsp;ed</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#fffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top><a href="urllib2.html">urllib2</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="OBOparser.OBOparser.html#Node">Node</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="OBOparser.OBOparser.html#TypeDefNode">TypeDefNode</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="OBOparser.OBOparser.html#OBOparser">OBOparser</a>
+</font></dt><dt><font face="helvetica, arial"><a href="OBOparser.OBOparser.html#Ontology">Ontology</a>
+</font></dt></dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Node">class <strong>Node</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>A&nbsp;class&nbsp;representing&nbsp;a&nbsp;node&nbsp;in&nbsp;an&nbsp;OBO&nbsp;ontology.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Node-__init__"><strong>__init__</strong></a>(self)</dt><dd><tt>Constructs&nbsp;a&nbsp;node&nbsp;in&nbsp;an&nbsp;OBOOntology&nbsp;to&nbsp;store&nbsp;term&nbsp;information.</tt></dd></dl>
+
+<dl><dt><a name="Node-getAllDisjoint"><strong>getAllDisjoint</strong></a>(self)</dt><dd><tt>Returns&nbsp;all&nbsp;the&nbsp;disjoints.</tt></dd></dl>
+
+<dl><dt><a name="Node-getAllIntersectionsOf"><strong>getAllIntersectionsOf</strong></a>(self)</dt><dd><tt>Returns&nbsp;all&nbsp;the&nbsp;intersections.</tt></dd></dl>
+
+<dl><dt><a name="Node-getAllRelatedSynonyms"><strong>getAllRelatedSynonyms</strong></a>(self)</dt><dd><tt>Returns&nbsp;all&nbsp;the&nbsp;related&nbsp;synonyms.</tt></dd></dl>
+
+<dl><dt><a name="Node-getAllSubsets"><strong>getAllSubsets</strong></a>(self)</dt><dd><tt>Returns&nbsp;all&nbsp;the&nbsp;subsets.</tt></dd></dl>
+
+<dl><dt><a name="Node-getAllSynonyms"><strong>getAllSynonyms</strong></a>(self)</dt><dd><tt>Return&nbsp;all&nbsp;synonyms.</tt></dd></dl>
+
+<dl><dt><a name="Node-getAllXrefs"><strong>getAllXrefs</strong></a>(self)</dt><dd><tt>Returns&nbsp;all&nbsp;the&nbsp;xrefs.</tt></dd></dl>
+
+<dl><dt><a name="Node-getAlternativeId"><strong>getAlternativeId</strong></a>(self)</dt><dd><tt>Returns&nbsp;alternative&nbsp;id.</tt></dd></dl>
+
+<dl><dt><a name="Node-getBroadSynonym"><strong>getBroadSynonym</strong></a>(self)</dt><dd><tt>Return&nbsp;broad&nbsp;synonym.</tt></dd></dl>
+
+<dl><dt><a name="Node-getComment"><strong>getComment</strong></a>(self)</dt><dd><tt>Returns&nbsp;comment.</tt></dd></dl>
+
+<dl><dt><a name="Node-getDefinition"><strong>getDefinition</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;definition&nbsp;of&nbsp;this&nbsp;node.</tt></dd></dl>
+
+<dl><dt><a name="Node-getDisjointFrom"><strong>getDisjointFrom</strong></a>(self, i)</dt><dd><tt>Return&nbsp;specific&nbsp;disjoint.<br>
+Keyword&nbsp;arguments:<br>
+i&nbsp;--&nbsp;index&nbsp;to&nbsp;select.</tt></dd></dl>
+
+<dl><dt><a name="Node-getExactSynonym"><strong>getExactSynonym</strong></a>(self)</dt><dd><tt>Return&nbsp;exact&nbsp;synonym.</tt></dd></dl>
+
+<dl><dt><a name="Node-getId"><strong>getId</strong></a>(self)</dt><dd><tt>Returns&nbsp;id&nbsp;of&nbsp;this&nbsp;node.</tt></dd></dl>
+
+<dl><dt><a name="Node-getIntersectionOf"><strong>getIntersectionOf</strong></a>(self, i)</dt><dd><tt>Return&nbsp;specific&nbsp;intersection.<br>
+Keyword&nbsp;arguments:<br>
+i&nbsp;--&nbsp;index&nbsp;to&nbsp;select.</tt></dd></dl>
+
+<dl><dt><a name="Node-getIsA"><strong>getIsA</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;is_A&nbsp;relationship.</tt></dd></dl>
+
+<dl><dt><a name="Node-getIsObsolete"><strong>getIsObsolete</strong></a>(self)</dt><dd><tt>Returns&nbsp;if&nbsp;node&nbsp;is&nbsp;obsolete.</tt></dd></dl>
+
+<dl><dt><a name="Node-getName"><strong>getName</strong></a>(self)</dt><dd><tt>Returns&nbsp;name&nbsp;of&nbsp;this&nbsp;node.</tt></dd></dl>
+
+<dl><dt><a name="Node-getNarrowSynonym"><strong>getNarrowSynonym</strong></a>(self)</dt><dd><tt>Return&nbsp;narrow&nbsp;synonym.</tt></dd></dl>
+
+<dl><dt><a name="Node-getPropertyValue"><strong>getPropertyValue</strong></a>(self)</dt><dd><tt>Return&nbsp;property&nbsp;value.</tt></dd></dl>
+
+<dl><dt><a name="Node-getRelatedSynonym"><strong>getRelatedSynonym</strong></a>(self, i)</dt><dd><tt>Return&nbsp;specific&nbsp;synonym.<br>
+Keyword&nbsp;arguments:<br>
+i&nbsp;--&nbsp;index&nbsp;to&nbsp;select.</tt></dd></dl>
+
+<dl><dt><a name="Node-getRelationship"><strong>getRelationship</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;relationship&nbsp;of&nbsp;this&nbsp;node.</tt></dd></dl>
+
+<dl><dt><a name="Node-getSubset"><strong>getSubset</strong></a>(self, i)</dt><dd><tt>Return&nbsp;specific&nbsp;subset.<br>
+Keyword&nbsp;arguments:<br>
+i&nbsp;--&nbsp;index&nbsp;to&nbsp;select.</tt></dd></dl>
+
+<dl><dt><a name="Node-getSynonym"><strong>getSynonym</strong></a>(self, i)</dt><dd><tt>Return&nbsp;synonym.<br>
+Keyword&nbsp;arguments:<br>
+i&nbsp;--&nbsp;index&nbsp;to&nbsp;select.</tt></dd></dl>
+
+<dl><dt><a name="Node-getXref"><strong>getXref</strong></a>(self, i)</dt><dd><tt>Return&nbsp;specific&nbsp;cross&nbsp;reference.<br>
+Keyword&nbsp;arguments:<br>
+i&nbsp;--&nbsp;index&nbsp;to&nbsp;select.</tt></dd></dl>
+
+<dl><dt><a name="Node-getXrefAnalog"><strong>getXrefAnalog</strong></a>(self)</dt><dd><tt>Return&nbsp;xref&nbsp;analog.</tt></dd></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="OBOparser">class <strong>OBOparser</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>A&nbsp;class&nbsp;representing&nbsp;an&nbsp;OBO&nbsp;parser.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="OBOparser-__init__"><strong>__init__</strong></a>(self)</dt><dd><tt>Constructs&nbsp;an&nbsp;<a href="#OBOparser">OBOparser</a>.</tt></dd></dl>
+
+<dl><dt><a name="OBOparser-createOntologyFromOBOFile"><strong>createOntologyFromOBOFile</strong></a>(self, datafile)</dt><dd><tt>Create&nbsp;an&nbsp;ontology&nbsp;of&nbsp;terms&nbsp;(nodes)&nbsp;from&nbsp;a&nbsp;uri&nbsp;/&nbsp;file.<br>
+Keyword&nbsp;arguments:<br>
+datafile&nbsp;--&nbsp;OBO&nbsp;file&nbsp;object.</tt></dd></dl>
+
+<dl><dt><a name="OBOparser-readFile"><strong>readFile</strong></a>(self)</dt><dd><tt>Reads&nbsp;file&nbsp;from&nbsp;the&nbsp;internet&nbsp;into&nbsp;a&nbsp;list&nbsp;object.</tt></dd></dl>
+
+<dl><dt><a name="OBOparser-setUrl"><strong>setUrl</strong></a>(self, aUrl)</dt><dd><tt>Set&nbsp;the&nbsp;url&nbsp;of&nbsp;the&nbsp;OBO&nbsp;file&nbsp;to&nbsp;parse.<br>
+Keyword&nbsp;arguments:<br>
+aUrl&nbsp;--&nbsp;the&nbsp;url&nbsp;where&nbsp;the&nbsp;OBO&nbsp;file&nbsp;resides.</tt></dd></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Ontology">class <strong>Ontology</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>A&nbsp;class&nbsp;to&nbsp;represent&nbsp;an&nbsp;OBO&nbsp;ontology.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Ontology-__init__"><strong>__init__</strong></a>(self)</dt><dd><tt>Creates&nbsp;an&nbsp;instance&nbsp;of&nbsp;an&nbsp;ontology&nbsp;from&nbsp;an&nbsp;OBO&nbsp;file.</tt></dd></dl>
+
+<dl><dt><a name="Ontology-addMetaData"><strong>addMetaData</strong></a>(self, data)</dt><dd><tt>Adds&nbsp;meta&nbsp;data.<br>
+Keyword&nbsp;arguments:<br>
+data&nbsp;--&nbsp;line&nbsp;of&nbsp;information&nbsp;to&nbsp;be&nbsp;added&nbsp;to&nbsp;the&nbsp;header.</tt></dd></dl>
+
+<dl><dt><a name="Ontology-addTerm"><strong>addTerm</strong></a>(self, newTerm)</dt><dd><tt>Adds&nbsp;a&nbsp;new&nbsp;OBO&nbsp;term&nbsp;to&nbsp;the&nbsp;ontology.<br>
+Keyword&nbsp;arguments:<br>
+newTerm&nbsp;--&nbsp;a&nbsp;new&nbsp;OBO&nbsp;term&nbsp;to&nbsp;be&nbsp;added&nbsp;to&nbsp;the&nbsp;OBO&nbsp;ontology.</tt></dd></dl>
+
+<dl><dt><a name="Ontology-addTypeDef"><strong>addTypeDef</strong></a>(self, typeDef)</dt><dd><tt>Add&nbsp;type&nbsp;definition&nbsp;to&nbsp;the&nbsp;ontology.</tt></dd></dl>
+
+<dl><dt><a name="Ontology-getAMetaDataInstance"><strong>getAMetaDataInstance</strong></a>(self, i)</dt><dd><tt>Returns&nbsp;a&nbsp;meta&nbsp;data&nbsp;instance.<br>
+Keyword&nbsp;arguments:<br>
+i&nbsp;--&nbsp;index&nbsp;to&nbsp;select.</tt></dd></dl>
+
+<dl><dt><a name="Ontology-getAllMetaData"><strong>getAllMetaData</strong></a>(self)</dt><dd><tt>Returns&nbsp;all&nbsp;meta&nbsp;data.</tt></dd></dl>
+
+<dl><dt><a name="Ontology-getNumTerms"><strong>getNumTerms</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;number&nbsp;of&nbsp;nodes&nbsp;in&nbsp;the&nbsp;ontology.</tt></dd></dl>
+
+<dl><dt><a name="Ontology-getNumTypeDefTerms"><strong>getNumTypeDefTerms</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;number&nbsp;of&nbsp;typeDef&nbsp;nodes&nbsp;in&nbsp;the&nbsp;ontology.</tt></dd></dl>
+
+<dl><dt><a name="Ontology-getTerm"><strong>getTerm</strong></a>(self, i)</dt><dd><tt>Returns&nbsp;the&nbsp;node&nbsp;given&nbsp;a&nbsp;specific&nbsp;index.<br>
+Keyword&nbsp;arguments:<br>
+i&nbsp;--&nbsp;index&nbsp;to&nbsp;select.</tt></dd></dl>
+
+<dl><dt><a name="Ontology-getTypeDefTerm"><strong>getTypeDefTerm</strong></a>(self, i)</dt><dd><tt>Return&nbsp;specific&nbsp;typeDef&nbsp;term.<br>
+Keyword&nbsp;arguments:<br>
+i&nbsp;--&nbsp;index&nbsp;to&nbsp;select.</tt></dd></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="TypeDefNode">class <strong>TypeDefNode</strong></a>(<a href="OBOparser.OBOparser.html#Node">Node</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>A&nbsp;class&nbsp;representing&nbsp;a&nbsp;typeDef&nbsp;node&nbsp;in&nbsp;an&nbsp;OBO&nbsp;ontology.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="TypeDefNode-__init__"><strong>__init__</strong></a>(self)</dt><dd><tt>Instantiates&nbsp;a&nbsp;node&nbsp;of&nbsp;typeDef.</tt></dd></dl>
+
+<dl><dt><a name="TypeDefNode-getIsCyclic"><strong>getIsCyclic</strong></a>(self)</dt><dd><tt>Returns&nbsp;if&nbsp;the&nbsp;node&nbsp;is&nbsp;cyclic.</tt></dd></dl>
+
+<dl><dt><a name="TypeDefNode-getIsTransitive"><strong>getIsTransitive</strong></a>(self)</dt><dd><tt>Return&nbsp;if&nbsp;the&nbsp;node&nbsp;is&nbsp;transitive.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="OBOparser.OBOparser.html#Node">Node</a>:<br>
+<dl><dt><a name="TypeDefNode-getAllDisjoint"><strong>getAllDisjoint</strong></a>(self)</dt><dd><tt>Returns&nbsp;all&nbsp;the&nbsp;disjoints.</tt></dd></dl>
+
+<dl><dt><a name="TypeDefNode-getAllIntersectionsOf"><strong>getAllIntersectionsOf</strong></a>(self)</dt><dd><tt>Returns&nbsp;all&nbsp;the&nbsp;intersections.</tt></dd></dl>
+
+<dl><dt><a name="TypeDefNode-getAllRelatedSynonyms"><strong>getAllRelatedSynonyms</strong></a>(self)</dt><dd><tt>Returns&nbsp;all&nbsp;the&nbsp;related&nbsp;synonyms.</tt></dd></dl>
+
+<dl><dt><a name="TypeDefNode-getAllSubsets"><strong>getAllSubsets</strong></a>(self)</dt><dd><tt>Returns&nbsp;all&nbsp;the&nbsp;subsets.</tt></dd></dl>
+
+<dl><dt><a name="TypeDefNode-getAllSynonyms"><strong>getAllSynonyms</strong></a>(self)</dt><dd><tt>Return&nbsp;all&nbsp;synonyms.</tt></dd></dl>
+
+<dl><dt><a name="TypeDefNode-getAllXrefs"><strong>getAllXrefs</strong></a>(self)</dt><dd><tt>Returns&nbsp;all&nbsp;the&nbsp;xrefs.</tt></dd></dl>
+
+<dl><dt><a name="TypeDefNode-getAlternativeId"><strong>getAlternativeId</strong></a>(self)</dt><dd><tt>Returns&nbsp;alternative&nbsp;id.</tt></dd></dl>
+
+<dl><dt><a name="TypeDefNode-getBroadSynonym"><strong>getBroadSynonym</strong></a>(self)</dt><dd><tt>Return&nbsp;broad&nbsp;synonym.</tt></dd></dl>
+
+<dl><dt><a name="TypeDefNode-getComment"><strong>getComment</strong></a>(self)</dt><dd><tt>Returns&nbsp;comment.</tt></dd></dl>
+
+<dl><dt><a name="TypeDefNode-getDefinition"><strong>getDefinition</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;definition&nbsp;of&nbsp;this&nbsp;node.</tt></dd></dl>
+
+<dl><dt><a name="TypeDefNode-getDisjointFrom"><strong>getDisjointFrom</strong></a>(self, i)</dt><dd><tt>Return&nbsp;specific&nbsp;disjoint.<br>
+Keyword&nbsp;arguments:<br>
+i&nbsp;--&nbsp;index&nbsp;to&nbsp;select.</tt></dd></dl>
+
+<dl><dt><a name="TypeDefNode-getExactSynonym"><strong>getExactSynonym</strong></a>(self)</dt><dd><tt>Return&nbsp;exact&nbsp;synonym.</tt></dd></dl>
+
+<dl><dt><a name="TypeDefNode-getId"><strong>getId</strong></a>(self)</dt><dd><tt>Returns&nbsp;id&nbsp;of&nbsp;this&nbsp;node.</tt></dd></dl>
+
+<dl><dt><a name="TypeDefNode-getIntersectionOf"><strong>getIntersectionOf</strong></a>(self, i)</dt><dd><tt>Return&nbsp;specific&nbsp;intersection.<br>
+Keyword&nbsp;arguments:<br>
+i&nbsp;--&nbsp;index&nbsp;to&nbsp;select.</tt></dd></dl>
+
+<dl><dt><a name="TypeDefNode-getIsA"><strong>getIsA</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;is_A&nbsp;relationship.</tt></dd></dl>
+
+<dl><dt><a name="TypeDefNode-getIsObsolete"><strong>getIsObsolete</strong></a>(self)</dt><dd><tt>Returns&nbsp;if&nbsp;node&nbsp;is&nbsp;obsolete.</tt></dd></dl>
+
+<dl><dt><a name="TypeDefNode-getName"><strong>getName</strong></a>(self)</dt><dd><tt>Returns&nbsp;name&nbsp;of&nbsp;this&nbsp;node.</tt></dd></dl>
+
+<dl><dt><a name="TypeDefNode-getNarrowSynonym"><strong>getNarrowSynonym</strong></a>(self)</dt><dd><tt>Return&nbsp;narrow&nbsp;synonym.</tt></dd></dl>
+
+<dl><dt><a name="TypeDefNode-getPropertyValue"><strong>getPropertyValue</strong></a>(self)</dt><dd><tt>Return&nbsp;property&nbsp;value.</tt></dd></dl>
+
+<dl><dt><a name="TypeDefNode-getRelatedSynonym"><strong>getRelatedSynonym</strong></a>(self, i)</dt><dd><tt>Return&nbsp;specific&nbsp;synonym.<br>
+Keyword&nbsp;arguments:<br>
+i&nbsp;--&nbsp;index&nbsp;to&nbsp;select.</tt></dd></dl>
+
+<dl><dt><a name="TypeDefNode-getRelationship"><strong>getRelationship</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;relationship&nbsp;of&nbsp;this&nbsp;node.</tt></dd></dl>
+
+<dl><dt><a name="TypeDefNode-getSubset"><strong>getSubset</strong></a>(self, i)</dt><dd><tt>Return&nbsp;specific&nbsp;subset.<br>
+Keyword&nbsp;arguments:<br>
+i&nbsp;--&nbsp;index&nbsp;to&nbsp;select.</tt></dd></dl>
+
+<dl><dt><a name="TypeDefNode-getSynonym"><strong>getSynonym</strong></a>(self, i)</dt><dd><tt>Return&nbsp;synonym.<br>
+Keyword&nbsp;arguments:<br>
+i&nbsp;--&nbsp;index&nbsp;to&nbsp;select.</tt></dd></dl>
+
+<dl><dt><a name="TypeDefNode-getXref"><strong>getXref</strong></a>(self, i)</dt><dd><tt>Return&nbsp;specific&nbsp;cross&nbsp;reference.<br>
+Keyword&nbsp;arguments:<br>
+i&nbsp;--&nbsp;index&nbsp;to&nbsp;select.</tt></dd></dl>
+
+<dl><dt><a name="TypeDefNode-getXrefAnalog"><strong>getXrefAnalog</strong></a>(self)</dt><dd><tt>Return&nbsp;xref&nbsp;analog.</tt></dd></dl>
+
+</td></tr></table></td></tr></table>
+</body></html>
