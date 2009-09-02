@@ -38,18 +38,19 @@ class ConvertOBO2OWL():
         for i in range(0,ontology.getNumTerms()):
             owlClass = ConvertTerm()
             aTerm = ontology.getTerm(i)
-            owlClass.setTermId(aTerm.id,"",aTerm.isObsolete)
-            owlClass.setName(aTerm.name)
-            owlClass.convertAlternativeId(aTerm.altId)
-            owlClass.setDefinition(aTerm.definition)
-            owlClass.setComment(aTerm.comment)
-            owlClass.convertSynonyms(aTerm.synonym)
-            owlClass.convertRelatedSynonyms(aTerm.related_synonym)
-            owlClass.convertExactSynonyms(aTerm.exactSynonym)
-            owlClass.convertBroadSynonyms(aTerm.broadSynonym)
-            owlClass.convertNarrowSynonyms(aTerm.narrowSynonym)
-            owlClass.convertXrefAnalog(aTerm.xrefAnalog)
-            owlClass.convertXref(aTerm.getAllXrefs())
+            if aTerm.id !="":
+                owlClass.setTermId(aTerm.id,"",aTerm.isObsolete)
+                owlClass.setName(aTerm.name)
+                owlClass.convertAlternativeId(aTerm.altId)
+                owlClass.setDefinition(aTerm.definition)
+                owlClass.setComment(aTerm.comment)
+                owlClass.convertSynonyms(aTerm.synonym)
+                owlClass.convertRelatedSynonyms(aTerm.related_synonym)
+                owlClass.convertExactSynonyms(aTerm.exactSynonym)
+                owlClass.convertBroadSynonyms(aTerm.broadSynonym)
+                owlClass.convertNarrowSynonyms(aTerm.narrowSynonym)
+                owlClass.convertXrefAnalog(aTerm.xrefAnalog)
+                owlClass.convertXref(aTerm.getAllXrefs())
             #Maybe issues with isA relation
             if aTerm.isA !="":
                 owlClass.convertIsARelationships("", aTerm.isA)
@@ -121,7 +122,7 @@ class ConvertOBO2OWL():
 
 if __name__ == "__main__":
     #t0 = time.time() 
-    converter = ConvertOBO2OWL("http://www.berkeleybop.org/ontologies/obo-all/NIF_GrossAnatomy/NIF_GrossAnatomy.obo")
+    converter = ConvertOBO2OWL("http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/anatomy/gross_anatomy/animal_gross_anatomy/amphibian/amphibian_anatomy.obo")
     converter.convertOBO2OWL("/home/ed/Desktop/Test.owl")
     #t1 = time.time()
     #elapsedTime = t1-t0
